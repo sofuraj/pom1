@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 
@@ -22,7 +21,10 @@ public class Fox1 {
     	String [] ln= {"sweet","sof","rose","doll","rock"};
     	String [] eid= {"sweety@gmail.com","sofy@gmail.com","rosey@gmail.com","dolly@gmail.com","rocky@gmail.com"};
     	String [] tn= {"45678978","198376452","1234567845","78563445674","567856345645"};
-String title="Register Account";
+    	String [] pwd= {"sweety@gmail.com1S","sofy@gmail.com2S","rosey@gmail.com1R","dolly@gmail.com1D","rocky@gmail.com2R"};
+    	String [] cpwd= {"sweety@gmail.com1S","sofy@gmail.com2S","rosey@gmail.com1R","dolly@gmail.com1D","rocky@gmail.com2R"};
+ 
+    	String title="Register Account";
     	
         // Set the path to the chromedriver executable
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
@@ -54,7 +56,7 @@ String title="Register Account";
         {
         
         	 //click the register link
-            driver.findElement(By.id("Register")).click();
+            driver.findElement(By.linkText("Register")).click();
             
         	driver.findElement(By.id("input-firstname")).sendKeys(fn[i]);
 
@@ -65,10 +67,10 @@ String title="Register Account";
         	driver.findElement(By.id("input-telephone")).sendKeys(tn[i]);
 
 
-            driver.findElement(By.id("input-password")).sendKeys(tn[i]);
+            driver.findElement(By.id("input-password")).sendKeys(pwd[i]);
 
 
-           driver.findElement(By.id("input-confirm")).sendKeys(tn[i]);
+           driver.findElement(By.id("input-confirm")).sendKeys(cpwd[i]);
 
            if(i%2==0)
         	{
